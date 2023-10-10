@@ -1,8 +1,6 @@
-import React, {useEffect} from 'react';
 import {BrowserRouter, Redirect, Route, Switch,} from "react-router-dom";
 import {Login} from "@/views/authentication/login";
 import {AdminLayout} from "@/views/admin";
-
 
 const Pages = () => {
 

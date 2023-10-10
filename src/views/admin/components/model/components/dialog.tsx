@@ -11,7 +11,7 @@ import {useModelStore} from "@/store/model.store";
 import {IModel} from "@/types";
 
 interface IModal {
-    model: IModel | Boolean,
+    model: any,
     handleClose: () => void,
 }
 
@@ -27,7 +27,7 @@ const VisuallyHiddenInput = styled('input')({
     width: 1,
 });
 
-const ButtonFile = ({name, register, watch, errors, updateMode}) => {
+const ButtonFile = ({name, register, watch, errors}) => {
     return (
         <Button
             component="label"
@@ -43,7 +43,7 @@ const ButtonFile = ({name, register, watch, errors, updateMode}) => {
     )
 }
 
-const validationFile = (value, updateMode) => updateMode ? updateMode : value && Boolean(value.length)
+const validationFile = (value, updateMode: any = null) => updateMode ? updateMode : value && Boolean(value.length)
 
 export const Modal: React.FC<IModal> = ({model, handleClose}) => {
 
@@ -137,23 +137,23 @@ export const Modal: React.FC<IModal> = ({model, handleClose}) => {
                                     Model
                                 </Typography>
                                 <Box pt={2}>
-                                    <ButtonFile name="file1" updateMode={ updateMode } register={ register }
+                                    <ButtonFile name="file1"  register={ register }
                                                 errors={ errors } watch={ watch }/>
                                 </Box>
                                 <Box pt={ 4 }>
-                                    <ButtonFile name="file2" updateMode={ updateMode } register={ register }
+                                    <ButtonFile name="file2"  register={ register }
                                                 errors={ errors } watch={ watch }/>
                                 </Box>
                                 <Box pt={ 4 }>
-                                    <ButtonFile name="file3" updateMode={ updateMode } register={ register }
+                                    <ButtonFile name="file3"  register={ register }
                                                 errors={ errors } watch={ watch }/>
                                 </Box>
                                 <Box pt={ 4 }>
-                                    <ButtonFile name="file4" updateMode={ updateMode } register={ register }
+                                    <ButtonFile name="file4"  register={ register }
                                                 errors={ errors } watch={ watch }/>
                                 </Box>
                                 <Box pt={ 4 }>
-                                    <ButtonFile name="file5" updateMode={ updateMode } register={ register }
+                                    <ButtonFile name="file5"  register={ register }
                                                 errors={ errors } watch={ watch }/>
                                 </Box>
                             </Grid>
@@ -162,23 +162,23 @@ export const Modal: React.FC<IModal> = ({model, handleClose}) => {
                                     Preprocessing model
                                 </Typography>
                                 <Box pt={2}>
-                                    <ButtonFile name="file1norm" updateMode={ updateMode } register={ register }
+                                    <ButtonFile name="file1norm"  register={ register }
                                                 errors={ errors } watch={ watch }/>
                                 </Box>
                                 <Box pt={ 4 }>
-                                    <ButtonFile name="file2norm" updateMode={ updateMode } register={ register }
+                                    <ButtonFile name="file2norm"  register={ register }
                                                 errors={ errors } watch={ watch }/>
                                 </Box>
                                 <Box pt={ 4 }>
-                                    <ButtonFile name="file3norm" updateMode={ updateMode } register={ register }
+                                    <ButtonFile name="file3norm"  register={ register }
                                                 errors={ errors } watch={ watch }/>
                                 </Box>
                                 <Box pt={ 4 }>
-                                    <ButtonFile name="file4norm" updateMode={ updateMode } register={ register }
+                                    <ButtonFile name="file4norm"  register={ register }
                                                 errors={ errors } watch={ watch }/>
                                 </Box>
                                 <Box pt={ 4 }>
-                                    <ButtonFile name="file5norm" updateMode={ updateMode } register={ register }
+                                    <ButtonFile name="file5norm"  register={ register }
                                                 errors={ errors } watch={ watch }/>
                                 </Box>
                             </Grid>

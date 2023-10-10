@@ -9,18 +9,18 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import {useAuthHook} from "@/hooks/authorization/auth.hook";
 export const drawerWidth: number = 240;
 
-const AppBarStyled = styled(MuiAppBar, {shouldForwardProp: (prop) => prop !== 'open',})<AppBarProps>(({ theme, open }) => ({
-    zIndex: theme.zIndex.drawer + 1,
-    transition: theme.transitions.create(['width', 'margin'], {
-        easing: theme.transitions.easing.sharp,
-        duration: theme.transitions.duration.leavingScreen,
+const AppBarStyled: any = styled<any>(MuiAppBar, {shouldForwardProp: (prop) => prop !== 'open',})<AppBarProps>( ({ theme, open }) => ({
+    zIndex: (theme as any).zIndex.drawer + 1,
+    transition: (theme as any).transitions.create(['width', 'margin'], {
+        easing: (theme as any).transitions.easing.sharp,
+        duration: (theme as any).transitions.duration.leavingScreen,
     }),
-    ...(open && {
+    ...((open as any) && {
         marginLeft: drawerWidth,
         width: `calc(100% - ${drawerWidth}px)`,
-        transition: theme.transitions.create(['width', 'margin'], {
-            easing: theme.transitions.easing.sharp,
-            duration: theme.transitions.duration.enteringScreen,
+        transition: (theme as any).transitions.create(['width', 'margin'], {
+            easing: (theme as any).transitions.easing.sharp,
+            duration: (theme as any).transitions.duration.enteringScreen,
         }),
     }),
 }));

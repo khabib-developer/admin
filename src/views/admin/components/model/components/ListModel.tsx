@@ -7,7 +7,7 @@ import {useModelHook} from "@/hooks/models/model.hook";
 import {IModel} from "@/types";
 
 const ListModel = () => {
-    const {models, setModels} = useModelStore()
+    const {models} = useModelStore()
     const {bulkUpdateOrders} = useModelHook()
     const setData = (updatedArray: IModel[]) => {
         bulkUpdateOrders(updatedArray)
@@ -15,9 +15,9 @@ const ListModel = () => {
     return (
         <Box pb={ 4 } sx={ {width: "50%"} }>
             <DragSortList data={ models.sort((a, b) => a.order - b.order) } setData={ setData }>
-                { (item, setActive, active) => {
+                { (item, setActive) => {
                     return (
-                        <ModelItem model={ item } setActive={ setActive } active={ active }/>
+                        <ModelItem model={ item } setActive={ setActive } />
                     )
                 } }
             </DragSortList>

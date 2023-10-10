@@ -19,12 +19,11 @@ export const UserItem: React.FC<{ powerUser?: IPowerUser | undefined }> = ({powe
         resolver: yupResolver(
             yup.object({
                 username: yup.string().required().min(2),
-                // password: yup.string().required().min(2),
-            })
+            }) as any
         )
-    })
+    } as any)
 
-    const onSubmit = async (data) => {
+    const onSubmit = async (data: any) => {
         if(powerUser) {
             if(data.password.trim() === "")
                 return await updatePowerUsers({username: data.username, id: powerUser.id})

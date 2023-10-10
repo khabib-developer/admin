@@ -15,7 +15,7 @@ export const UserList = () => {
 
     return (
         <Box sx={ styles }>
-            { powerUsers.sort((a, b) => a.id - b.id).map(powerUser => <UserItem powerUser={ powerUser }
+            { powerUsers.sort((a, b) => a.id! - b.id!).map(powerUser => <UserItem powerUser={ powerUser }
                                                                                 key={ powerUser.id }/>) }
         </Box>
     )

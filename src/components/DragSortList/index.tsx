@@ -59,7 +59,7 @@ export const DragSortList = ({children, data, setData}) => {
     return (
         <div>
             {
-                data.map((item, i) =>
+                data.map((item) =>
                     <div
                         className={ `draggable mt-1 rounded-md draggable__item__${ item.id }` }
                         key={ item.id }

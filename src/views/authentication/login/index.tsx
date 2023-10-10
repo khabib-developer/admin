@@ -9,7 +9,7 @@ import Typography from '@mui/material/Typography';
 import {LoginForm} from "@/types";
 import {useForm} from "react-hook-form";
 import {yupResolver} from "@hookform/resolvers/yup";
-import * as yup from "yup";
+import yup from "yup";
 import {useAuthHook} from "@/hooks/authorization/auth.hook";
 import Loader from "@/components/loading";
 
@@ -31,10 +31,10 @@ export const Login = () => {
                 username: yup.string().required().min(2),
                 password: yup.string().required().min(2),
             })
-        )
+        ) as any
     })
 
-    const onSubmit = async (data) => await login(data);
+    const onSubmit = async (data: unknown) => await login(data);
 
     if (permission)
         return (
@@ -57,7 +57,6 @@ export const Login = () => {
                             fullWidth
                             id="email"
                             label="Username"
-                            name="email"
                             autoComplete="email"
                             error={ !!errors.username }
                             { ...register("username") }
@@ -67,7 +66,6 @@ export const Login = () => {
                             margin="normal"
                             required
                             fullWidth
-                            name="password"
                             label="Password"
                             type="password"
                             id="password"

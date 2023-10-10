@@ -19,7 +19,7 @@ import {useModelHook} from "@/hooks/models/model.hook";
 import {Modal} from "@/views/admin/components/model/components/dialog";
 
 
-export const ModelItem: React.FC<{model: IModel, setActive}> = ({model, setActive}) => {
+export const ModelItem: React.FC<{model: IModel, setActive: any}> = ({model, setActive}) => {
     const handleClick = () => {
         setActive(true)
     }

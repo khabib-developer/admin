@@ -14,30 +14,31 @@ import StorageIcon from '@mui/icons-material/Storage';
 import GroupIcon from '@mui/icons-material/Group';
 import {useHistory, useLocation} from "react-router-dom";
 
-const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(
-    ({ theme, open }) => ({
+const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })
+(
+    ( { theme, open } ) => ({
         '& .MuiDrawer-paper': {
             position: 'relative',
             whiteSpace: 'nowrap',
             width: drawerWidth,
-            transition: theme.transitions.create('width', {
-                easing: theme.transitions.easing.sharp,
-                duration: theme.transitions.duration.enteringScreen,
+            transition: (theme as any).transitions.create('width', {
+                easing: (theme as any).transitions.easing.sharp,
+                duration: (theme as any).transitions.duration.enteringScreen,
             }),
             boxSizing: 'border-box',
-            ...(!open && {
+            ...(!(open as any) && {
                 overflowX: 'hidden',
-                transition: theme.transitions.create('width', {
-                    easing: theme.transitions.easing.sharp,
-                    duration: theme.transitions.duration.leavingScreen,
+                transition: (theme as any).transitions.create('width', {
+                    easing: (theme as any).transitions.easing.sharp,
+                    duration: (theme as any).transitions.duration.leavingScreen,
                 }),
-                width: theme.spacing(7),
-                [theme.breakpoints.up('sm')]: {
-                    width: theme.spacing(9),
+                width: (theme as any).spacing(7),
+                [(theme as any).breakpoints.up('sm')]: {
+                    width: (theme as any).spacing(9),
                 },
             }),
         },
-    }),
+    }) as any,
 );
 
 interface ISidebar {
