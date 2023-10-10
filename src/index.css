@@ -1,0 +1,12 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.draggable {
+    transition: all 0.3s ease;
+}
+
+.border {
+    transform: scale(1.03);
+}
